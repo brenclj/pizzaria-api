@@ -13,11 +13,11 @@ import { fileURLToPath } from "url";
 
 // import authRouters from './routers/authRouters.js';
 
-import clienteRouters from './routers/clienteRouters.js';
+import clienteRouters from '../src/routers/clienteRouters.js'
 
-// import produtoRouters from './routers/produtoRouters.js';
+import produtoRouters from './routers/produtoRouters.js';
 
-// import pedidoRouters from  './routers/pedidoRouters.js';
+import pedidoRouters from  '../src/routers/pedidoRouters.js';
 // import { METHODS } from "http";
 
 //configurações
@@ -60,9 +60,9 @@ app.use(`${apiPrefix}/clientes`, clienteRouters);
 
 // app.use(`${apiPrefix}/login`, authRouters);
 
-// app.use(`${apiPrefix}/produtos`, produtoRouters);
+app.use(`${apiPrefix}/produtos`, produtoRouters);
 
-// app.use(`${apiPrefix}/pedidos`, pedidoRouters);
+app.use(`${apiPrefix}/pedidos`, pedidoRouters);
 
 app.use((err,req,res,next) => {console.error(err.stack);
     res.status(500).send('Algo deu errado no Servidor!');
