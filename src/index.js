@@ -18,6 +18,9 @@ import clienteRouters from '../src/routers/clienteRouters.js'
 import produtoRouters from './routers/produtoRouters.js';
 
 import pedidoRouters from  '../src/routers/pedidoRouters.js';
+
+import entregadorRouters from '../src/routers/entregadorRouters.js';
+
 // import { METHODS } from "http";
 
 //configurações
@@ -63,6 +66,8 @@ app.use(`${apiPrefix}/clientes`, clienteRouters);
 app.use(`${apiPrefix}/produtos`, produtoRouters);
 
 app.use(`${apiPrefix}/pedidos`, pedidoRouters);
+
+app.use(`${apiPrefix}/entregador`, entregadorRouters);
 
 app.use((err,req,res,next) => {console.error(err.stack);
     res.status(500).send('Algo deu errado no Servidor!');
