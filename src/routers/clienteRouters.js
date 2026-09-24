@@ -8,14 +8,14 @@ import validate from '../middlewares/validate.js'
 import  {usuarioCreateSchema, usuarioUpdateSchema} from '../controllers/clienteController.js'
 
 // 1. Importa o middleware de login. Descomentar para carregar
-//import authMiddleware from '../middlewares/authmiddleWare.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
 // A rota de criação de cliente (registro) continua pública
 router.post('/', validate(usuarioCreateSchema), clienteController.adicionarUsuario);// Rota final: POST /api/clientes
 
-//router.use(authMiddleware);
+router.use(authMiddleware);
 
 router.get('/', clienteController.listarUsuarios);
 

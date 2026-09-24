@@ -11,7 +11,7 @@ import { fileURLToPath } from "url";
 
 // importando as rotas de autenticação
 
-// import authRouters from './routers/authRouters.js';
+import authRouters from './routers/authRouters.js';
 
 import clienteRouters from '../src/routers/clienteRouters.js'
 
@@ -61,7 +61,7 @@ const apiPrefix = '/api';
 
 app.use(`${apiPrefix}/clientes`, clienteRouters);
 
-// app.use(`${apiPrefix}/login`, authRouters);
+app.use(`${apiPrefix}/login`, authRouters);
 
 app.use(`${apiPrefix}/produtos`, produtoRouters);
 
