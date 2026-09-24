@@ -16,7 +16,6 @@ export const pedidoCreateSchema = Joi.object({
 });
 
 export const pedidoUpdateSchema = Joi.object({
-    idPedido: Joi.string(),
     formaPagto: Joi.string(),
     valorTotal: Joi.number(),
     idEntregador:Joi.number(),

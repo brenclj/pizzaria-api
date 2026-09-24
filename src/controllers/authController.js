@@ -7,7 +7,8 @@ export const login = async (req, res) => {
     const { cpf, senha } = req.body;
     try {
         // 1. Verificar se o usuário existe no banco de dados
-        const cliente = await clienteServices.findAll(cpf);
+        const clientes = await clienteServices.findAll(cpf);
+        const cliente = clientes[0];
     if (!cliente) {
         return res.status(401).json({ error: 'Credenciais inválidas' });
     }
@@ -28,3 +29,4 @@ export const login = async (req, res) => {
         res.status(500).json({ message: 'Erro interno do servidor'});
     }
 };
+
